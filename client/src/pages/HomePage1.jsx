@@ -35,6 +35,7 @@ const HomePage1 = () => {
                 <div className="product text-center">
                 <div className="position-relative mb-3">
                     <div className="badge text-white badge-"></div><Link className="d-block" to={"/details/"+product.id}><img className="img-fluid w-100" src={AppURL.Images+product.i_path} alt="..." /></Link>
+                    
                     <div className="product-overlay">
                     <ul className="mb-0 list-inline">
                         {/* <li className="list-inline-item m-0 p-0"><Link className="btn btn-sm btn-outline-dark" href={product.detail_url}><i className="far fa-heart"></i></Link></li> */}
@@ -59,9 +60,10 @@ const HomePage1 = () => {
             <h2 className="h5 text-uppercase mb-4">Browse our categories</h2>
           </header>
           <div className="row">
-            <div className="col-md-4 mb-4 mb-md-0"><a className="category-item" href="shop.html"><img className="img-fluid" src="img/cat-img-1.jpg" alt="" /><strong className="category-item-title">Clothes</strong></a></div>
-            <div className="col-md-4 mb-4 mb-md-0"><a className="category-item mb-4" href="shop.html"><img className="img-fluid" src="img/cat-img-2.jpg" alt="" /><strong className="category-item-title">Shoes</strong></a><a className="category-item" href="shop.html"><img className="img-fluid" src="img/cat-img-3.jpg" alt="" /><strong className="category-item-title">Watches</strong></a></div>
-            <div className="col-md-4"><a className="category-item" href="shop.html"><img className="img-fluid" src="img/cat-img-4.jpg" alt="" /><strong className="category-item-title">Electronics</strong></a></div>
+            {/* <div className="col-md-4 mb-4 mb-md-0"><a className="category-item" href="shop.html"><img className="img-fluid" src="img/cat-img-1.jpg" alt="" /><strong className="category-item-title">Clothes</strong></a></div> */}
+            <div className="col-md-4 mb-4 mb-md-0"><a className="category-item" href="shop.html"><img className="img-fluid" src={AppURL.Images+'cat-img-1.jpg'} alt="" /><strong className="category-item-title">Clothes</strong></a></div>
+            <div className="col-md-4 mb-4 mb-md-0"><a className="category-item mb-4" href="shop.html"><img className="img-fluid" src={AppURL.Images+'cat-img-2.jpg'} alt="" /><strong className="category-item-title">Shoes</strong></a><a className="category-item" href="shop.html"><img className="img-fluid" src={AppURL.Images+'cat-img-3.jpg'} alt="" /><strong className="category-item-title">Watches</strong></a></div>
+            <div className="col-md-4"><a className="category-item" href="shop.html"><img className="img-fluid" src={AppURL.Images+'cat-img-4.jpg'} alt="" /><strong className="category-item-title">Electronics</strong></a></div>
           </div>
         </section>   
         <section className="py-5">

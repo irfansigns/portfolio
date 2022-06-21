@@ -15,19 +15,19 @@ class ProductController extends Controller
     public function ProductList(Request $request){
         $productlist = Product::where('featured','true')->get();
         
-        try{
+        // try{
             
-            Mail::to('zahidiqbalsheikh849@gmail.com')->send(new ForgetMail("The Token"));
+        //     Mail::to('irfansigns@gmail.com')->send(new ForgetMail("The Token"));
 
-            return response([
-                'message' => 'Mail Sent'
-            ],200);
+        //     return response([
+        //         'message' => 'Mail Sent'
+        //     ],200);
 
-        }catch(Exception $exception){
-            return response([
-                'message' => $exception->getMessage()
-            ],400);
-        }
+        // }catch(Exception $exception){
+        //     return response([
+        //         'message' => $exception->getMessage()
+        //     ],400);
+        // }
         return $productlist;
     }
 

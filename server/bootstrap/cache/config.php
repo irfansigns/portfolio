@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:SA3+mEr625f+9UAUqjqSPiAwU3r/6nsQyKftSNbFAsw=',
+    'key' => 'base64:IbQK+Ss6S/evpjPM0zaIfSj3bNMuSTRQ477QyVwn1Jo=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -194,7 +194,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'D:\\portfolio\\server\\storage\\framework/cache/data',
+        'path' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -282,8 +282,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'reactcommerce',
-        'username' => 'sameer',
-        'password' => 'password',
+        'username' => 'root',
+        'password' => '',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -302,8 +302,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'reactcommerce',
-        'username' => 'sameer',
-        'password' => 'password',
+        'username' => 'root',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -317,8 +317,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'reactcommerce',
-        'username' => 'sameer',
-        'password' => 'password',
+        'username' => 'root',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -360,12 +360,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\portfolio\\server\\storage\\app',
+        'root' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\portfolio\\server\\storage\\app/public',
+        'root' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -382,7 +382,7 @@
     ),
     'links' => 
     array (
-      'D:\\portfolio\\server\\public\\storage' => 'D:\\portfolio\\server\\storage\\app/public',
+      'C:\\xampp\\htdocs\\portfolio\\server\\public\\storage' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -416,13 +416,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'D:\\portfolio\\server\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'D:\\portfolio\\server\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -472,7 +472,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'D:\\portfolio\\server\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -484,11 +484,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'smtp.mailtrap.io',
-        'port' => '2525',
-        'encryption' => NULL,
-        'username' => NULL,
-        'password' => NULL,
+        'host' => 'smtp.gmail.com',
+        'port' => '587',
+        'encryption' => 'tls',
+        'username' => 'musarat8969@gmail.com',
+        'password' => 'ashraf_8969',
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
@@ -521,15 +521,15 @@
     ),
     'from' => 
     array (
-      'address' => NULL,
-      'name' => '${APP_NAME}',
+      'address' => '',
+      'name' => 'Laravel',
     ),
     'markdown' => 
     array (
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'D:\\portfolio\\server\\resources\\views/vendor/mail',
+        0 => 'C:\\xampp\\htdocs\\portfolio\\server\\resources\\views/vendor/mail',
       ),
     ),
     'stream' => 
@@ -617,7 +617,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'D:\\portfolio\\server\\storage\\framework/sessions',
+    'files' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -637,9 +637,9 @@
   array (
     'paths' => 
     array (
-      0 => 'D:\\portfolio\\server\\resources\\views',
+      0 => 'C:\\xampp\\htdocs\\portfolio\\server\\resources\\views',
     ),
-    'compiled' => 'D:\\portfolio\\server\\storage\\framework\\views',
+    'compiled' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\framework\\views',
   ),
   'flare' => 
   array (
@@ -688,7 +688,7 @@
       'ensure_pages_exist' => true,
       'page_paths' => 
       array (
-        0 => 'D:\\portfolio\\server\\resources\\js/Pages',
+        0 => 'C:\\xampp\\htdocs\\portfolio\\server\\resources\\js/Pages',
       ),
       'page_extensions' => 
       array (

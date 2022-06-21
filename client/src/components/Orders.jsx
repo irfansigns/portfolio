@@ -16,7 +16,7 @@ const Orders = () => {
                     <li className="d-flex justify-content-between">
                         <div className="d-flex flex-row align-items-center"><i className="fa fa-check-circle checkicon"></i>
                             <div className="ml-2">
-                                <h6 className="mb-0">Kickoff meeting</h6>
+                                <h6 className="mb-0">Ladies Summer Pack</h6>
                                 <div className="d-flex flex-row mt-1 text-black-50 date-time">
                                     <div><i className="fa fa-calendar-o"></i><span className="ml-2">22 May 2020 11:30 PM</span></div>
                                     

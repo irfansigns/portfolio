@@ -87,7 +87,7 @@ class AdminController extends Controller
             $check=in_array($mextension,$allowedfileExtension);
 
             if($check){
-                $location = public_path('img/'.$mfilename);
+                $location = storage_path('app\\img\\'.$mfilename);
                 Image::make($mfile)->save($location);
             }
         }
@@ -106,7 +106,7 @@ class AdminController extends Controller
             foreach($files as $file){
                 $filename = $file->getClientOriginalName();
                 $extension = $file->getClientOriginalExtension();
-                $location = public_path('img\\'.$filename);
+                $location = storage_path('app\\img\\'.$filename);
                 Image::make($file)->save($location);
                 $check=in_array($extension,$allowedfileExtension);
                 if($check){
@@ -174,7 +174,7 @@ class AdminController extends Controller
             $check=in_array($mextension,$allowedfileExtension);
 
             if($check){
-                $location = public_path('img/'.$mfilename);
+                $location = storage_path('app\\img\\'.$mfilename);
                 Image::make($mfile)->save($location);
             }
             $product->i_path = $mfilename;
@@ -203,7 +203,7 @@ class AdminController extends Controller
                 $filename = $file->getClientOriginalName();
                 $allowedfileExtension=['pdf','jpg','png'];
                 $extension = $file->getClientOriginalExtension();
-                $location = public_path('img\\'.$filename);
+                $location = storage_path('app\\img\\'.$filename);
                 Image::make($file)->save($location);
                 $check=in_array($extension,$allowedfileExtension);
                 if($check){
