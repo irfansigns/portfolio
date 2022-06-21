@@ -13,7 +13,6 @@ node_modules/
 Video/
 
 webalizer/
-/composer.json
-/composer.lock
+
 /project_store
 
