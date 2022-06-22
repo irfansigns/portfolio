@@ -7,6 +7,10 @@ class AppURL{
         return this.BaseURL+"productdetails/"+code;
     }
 
+    static MegaSlider(code){
+        return this.BaseURL+"sliderImages/"+code;
+    }
+
     static RelatedProducts(code){
         return this.BaseURL+"relatedProduct/"+code;
     }

@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\User\AuthController;
@@ -15,7 +16,7 @@ Route::get('/productdetails/{id}',[ProductController::class, 'ProductDetails']);
 Route::get('/relatedProduct/{id}',[ProductController::class, 'relatedProducts']);
 Route::post('/storeOrder',[ProductController::class, 'storeOrder']);
 Route::get('/shop/category/{id}', [ProductController::class, 'shopCategory']);
-Route::get('/shop', [CategoryController::class, 'CatList']);
+Route::get('/sliderImages/{id}', [LayoutController::class, 'index']);
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });

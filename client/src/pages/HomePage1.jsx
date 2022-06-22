@@ -5,7 +5,7 @@ import AppURL from '../AppURL';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 import CatSlider from "../components/CatSlider";
-import MCatSlider from "../components/MCatSlider";
+import MCatSlider from "../components/Slider/MCatSlider";
 
 
 const HomePage1 = () => {
@@ -56,8 +56,11 @@ const HomePage1 = () => {
     })
     return (
         <div className="container-fluid mx-5">
-       
-        <MCatSlider /> 
+        <div className="row">
+            <div className="col-md-10">
+            <MCatSlider /> 
+            </div>
+        </div>
         <section className="py-5">
         <header>
             <p className="small text-muted small text-uppercase mb-1">Made the hard way</p>

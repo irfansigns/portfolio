@@ -11,7 +11,6 @@ const ProductDetails = (props) => {
     const [itemData,setItemData] = useState({
         ProductData:"",
         categoryId:""
-
     });
 
     const params = useParams()

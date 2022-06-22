@@ -80,16 +80,16 @@ class AdminController extends Controller
 
         if($request->hasFile('thumbnail')){
             // $thumbnail = $request->thumbnail->store('img','public');  New Method
-            $allowedfileExtension=['pdf','jpg','png'];
+            $allowedfileExtension=['pdf','jpg','png','jpeg'];
             $mfile = $request->file('thumbnail');
             $mfilename = $mfile->getClientOriginalName();
             $mextension = $mfile->getClientOriginalExtension();
             $check=in_array($mextension,$allowedfileExtension);
 
-            if($check){
-                $location = storage_path('app\\img\\'.$mfilename);
+            
+                $location = storage_path('app\\public\\img\\'.$mfilename);
                 Image::make($mfile)->save($location);
-            }
+            
         }
 
         $product->pname = $request->name;
@@ -106,7 +106,7 @@ class AdminController extends Controller
             foreach($files as $file){
                 $filename = $file->getClientOriginalName();
                 $extension = $file->getClientOriginalExtension();
-                $location = storage_path('app\\img\\'.$filename);
+                $location = storage_path('app\\public\\img\\'.$filename);
                 Image::make($file)->save($location);
                 $check=in_array($extension,$allowedfileExtension);
                 if($check){
