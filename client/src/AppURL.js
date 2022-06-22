@@ -1,7 +1,7 @@
 class AppURL{
     static BaseURL = "http://127.0.0.1:8000/api/";
     static ProductList = this.BaseURL + "products";
-    static Images = "http://localhost:3000/img/";
+    static Images = "http://localhost:8000/storage/img/";
 
     static ProductDetails(code){
         return this.BaseURL+"productdetails/"+code;

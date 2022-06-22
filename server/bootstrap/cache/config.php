@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:IbQK+Ss6S/evpjPM0zaIfSj3bNMuSTRQ477QyVwn1Jo=',
+    'key' => 'base64:5w6wbG29rV7icNqSbWYMx8e9Pb5PTFC+V+UaCWZhVT4=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -194,7 +194,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\framework/cache/data',
+        'path' => 'D:\\portfolio\\server\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -360,12 +360,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\app',
+        'root' => 'D:\\portfolio\\server\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\app/public',
+        'root' => 'D:\\portfolio\\server\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -382,7 +382,7 @@
     ),
     'links' => 
     array (
-      'C:\\xampp\\htdocs\\portfolio\\server\\public\\storage' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\app/public',
+      'D:\\portfolio\\server\\public\\storage' => 'D:\\portfolio\\server\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -416,13 +416,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\logs/laravel.log',
+        'path' => 'D:\\portfolio\\server\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\logs/laravel.log',
+        'path' => 'D:\\portfolio\\server\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -472,7 +472,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\logs/laravel.log',
+        'path' => 'D:\\portfolio\\server\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -529,7 +529,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\xampp\\htdocs\\portfolio\\server\\resources\\views/vendor/mail',
+        0 => 'D:\\portfolio\\server\\resources\\views/vendor/mail',
       ),
     ),
     'stream' => 
@@ -617,7 +617,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\framework/sessions',
+    'files' => 'D:\\portfolio\\server\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -637,9 +637,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\portfolio\\server\\resources\\views',
+      0 => 'D:\\portfolio\\server\\resources\\views',
     ),
-    'compiled' => 'C:\\xampp\\htdocs\\portfolio\\server\\storage\\framework\\views',
+    'compiled' => 'D:\\portfolio\\server\\storage\\framework\\views',
   ),
   'flare' => 
   array (
@@ -688,7 +688,7 @@
       'ensure_pages_exist' => true,
       'page_paths' => 
       array (
-        0 => 'C:\\xampp\\htdocs\\portfolio\\server\\resources\\js/Pages',
+        0 => 'D:\\portfolio\\server\\resources\\js/Pages',
       ),
       'page_extensions' => 
       array (

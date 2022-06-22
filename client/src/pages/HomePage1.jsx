@@ -4,6 +4,8 @@ import { cartContext } from "../global/cartContext";
 import AppURL from '../AppURL';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
+import CatSlider from "../components/CatSlider";
+import MCatSlider from "../components/MCatSlider";
 
 
 const HomePage1 = () => {
@@ -53,19 +55,9 @@ const HomePage1 = () => {
             )
     })
     return (
-        <div className="container">
-        <section className="pt-5">
-          <header className="text-center">
-            <p className="small text-muted small text-uppercase mb-1">Carefully created collections</p>
-            <h2 className="h5 text-uppercase mb-4">Browse our categories</h2>
-          </header>
-          <div className="row">
-            {/* <div className="col-md-4 mb-4 mb-md-0"><a className="category-item" href="shop.html"><img className="img-fluid" src="img/cat-img-1.jpg" alt="" /><strong className="category-item-title">Clothes</strong></a></div> */}
-            <div className="col-md-4 mb-4 mb-md-0"><a className="category-item" href="shop.html"><img className="img-fluid" src={AppURL.Images+'cat-img-1.jpg'} alt="" /><strong className="category-item-title">Clothes</strong></a></div>
-            <div className="col-md-4 mb-4 mb-md-0"><a className="category-item mb-4" href="shop.html"><img className="img-fluid" src={AppURL.Images+'cat-img-2.jpg'} alt="" /><strong className="category-item-title">Shoes</strong></a><a className="category-item" href="shop.html"><img className="img-fluid" src={AppURL.Images+'cat-img-3.jpg'} alt="" /><strong className="category-item-title">Watches</strong></a></div>
-            <div className="col-md-4"><a className="category-item" href="shop.html"><img className="img-fluid" src={AppURL.Images+'cat-img-4.jpg'} alt="" /><strong className="category-item-title">Electronics</strong></a></div>
-          </div>
-        </section>   
+        <div className="container-fluid mx-5">
+       
+        <MCatSlider /> 
         <section className="py-5">
         <header>
             <p className="small text-muted small text-uppercase mb-1">Made the hard way</p>
@@ -73,9 +65,19 @@ const HomePage1 = () => {
             </header>
         <div className="row">
             
-            
-            {userView}
-            
+            <div className="col-md-9">
+                <div className="row">  
+                    {userView}
+                </div>
+            </div>
+
+            <div className="col-md-3">
+                <div className="row">  
+                    
+                </div>
+                {/* End of Row */}
+            </div>
+
         </div>
         </section>
         </div>

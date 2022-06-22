@@ -7,6 +7,7 @@ import '../src/assets/css/fontawesome.css';
 import './assets/theme/vendor/bootstrap-select/css/bootstrap-select.min.css'
 import './assets/theme/css/style.default.css'
 import './assets/theme/css/custom.css'
+
 import axios from 'axios'
 
 
