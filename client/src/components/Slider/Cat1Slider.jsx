@@ -37,13 +37,12 @@ const Cat1Slider = (props) => {
 
 
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
-        speed: 500,
         slidesToShow: 1,
         autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 2000,
+        speed: 8000,
+        autoplaySpeed: 8000,
         slidesToScroll: 1
       };
 

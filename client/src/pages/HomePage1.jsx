@@ -55,9 +55,9 @@ const HomePage1 = () => {
             )
     })
     return (
-        <div className="container-fluid mx-5">
-        <div className="row">
-            <div className="col-md-10">
+        <div className="container">
+        <div className="row justify-content-center">
+            <div className="col-md-12">
             <MCatSlider /> 
             </div>
         </div>
@@ -68,15 +68,19 @@ const HomePage1 = () => {
             </header>
         <div className="row">
             
-            <div className="col-md-9">
+            <div className="col-md-10">
                 <div className="row">  
                     {userView}
                 </div>
             </div>
 
-            <div className="col-md-3">
+            <div className="col-md-2">
                 <div className="row">  
-                    
+                    <div className="col-md-12">
+                        <img src={AppURL.Images+"ladjeans.jpg"} className="card-img-top" alt="..." />
+                        <img src={AppURL.Images+"cccc.jpg"} className="card-img-top" alt="..." />
+                        <img src={AppURL.Images+"cosmat.jpg"} className="card-img-top" alt="..." />
+                    </div>
                 </div>
                 {/* End of Row */}
             </div>
