@@ -40,7 +40,7 @@ const Navbar =()=>{
                 </ul>
                 <ul className="navbar-nav ml-auto">               
                  
-                  <li className="nav-item"><Link className="nav-link" href={AppURL + '/product/cart'}> <i className="fas fa-dolly-flatbed mr-1 text-gray"></i><small className="text-gray" id="cart"> ({shoppingCart.length})</small></Link></li>
+                  <li className="nav-item"><Link className="nav-link" to={'/cart'}> <i className="fas fa-dolly-flatbed mr-1 text-gray"></i><small className="text-gray" id="cart"> ({shoppingCart.length})</small></Link></li>
                   {user?<li className="nav-item"><Link className="nav-link" onClick={logoutHandler}> <i className="fas fa-user-alt mr-1 text-gray"></i>Logout</Link></li>:
                   <li className="nav-item"><Link className="nav-link" method="get" to="/login"> <i className="fas fa-user-alt mr-1 text-gray"></i>Login</Link></li>
                   }

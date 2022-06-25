@@ -44,8 +44,8 @@ class ProductController extends Controller
         // $productDetails = Product::all()->where('id',$id);
         // $productDetails = Product::find($id)->category;//select * from category where id = product_id of this specfic product
         $productDetails = Product::find($id);
-        $category = Category::where('id', $id)->first()->cname;//will return single value
-        // $category = Category::where('id', $id)->pluck('cname')->all(); will return in array
+        //$category = Category::where('id', $id)->first()->cname;//will return single value
+        $category = Category::where('id',$productDetails->category_id)->pluck('cname')->first();
         $pimage = Pimage::all()->where('product_id', $id);
         // $pimage = Pimage::all();
         $images = array();
