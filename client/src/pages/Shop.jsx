@@ -1,67 +1,74 @@
 import React, { useState, useEffect, useContext } from 'react'
+import { Link , useParams } from 'react-router-dom'
 import { productContext } from "../global/productContext"
 import { cartContext } from "../global/cartContext";
 import AppURL from '../AppURL';
 import axios from 'axios';
 
-const Shop = () => {
-    const [cat , setCat] = useState([]);
+const Shop = (props) => {
+    const [Items , setItems] = useState([]);
     const {products} = useContext(productContext);
+    const {categories} = useContext(productContext);
     const {dispatch} = useContext(cartContext);
+    const params = useParams()
 
     useEffect(() => {
-        const fetchCats = () => {
-            axios.get(AppURL.Shop).then(response=>{
-                // console.log(response.data);
-                setCat(response.data);
-                console.dir(response.data);
-            }).catch(error=>{
-                
-            });
-            
-        }
-        fetchCats();
+      const fetchItems = () => {
+          axios.get(AppURL.Categories(params.code)).then(response=>{
+              // console.log(response.data);
+              setItems(response.data);
+              console.dir(response.data);
+          }).catch(error=>{
+              
+          });
+          
+      }
+      if(params.code){
+        fetchItems();
+      }
     }, [])
+    
 
-    if(!cat){
+    if(!categories){
       return(
         <>
         <h4>Loading</h4>
         </>
       )
     }else{
-      const brands = cat.map((cats,key)=>{
+      const brands = categories.map((cats,key)=>{
         if(cats.dept==2){
         return (
-          <li className="mb-2"><a className="reset-anchor" href="#">{cats.cname}</a></li>
+          <li className="mb-2"><Link className="reset-anchor" to={'/shop/'+ cats.id }>{cats.cname}</Link></li>
         )}
       });
 
-      const names = cat.map((cats,key)=>{
-        if(cats.dept!==2){
+      const names = categories.map((ecat,key)=>{
+        if(ecat.dept!=='2'){
         return (
-          <li className="mb-2"><a className="reset-anchor" href="#">{cats.cname}</a></li>
+          <li className="mb-2"><Link className="reset-anchor" to={`/shop/${ ecat.id }`}>{ecat.cname}</Link></li>
         )}
       });
 
-      const ProductList = products;
+      let ProductList = Items;
+      if(!params.code){
+        ProductList = products;
+      }
       const userView = ProductList.map((product,key)=>{
         return(
           <>
             <div className="col-lg-4 col-sm-6">
                     <div className="product text-center">
                       <div className="mb-3 position-relative">
-                        <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="img/product-1.jpg" alt="..." /></a>
+                        <div className="badge text-white badge-"></div><Link className="d-block" to={"/details/"+product.id}><img className="img-fluid w-100" src={AppURL.Images+product.i_path} alt="..." /></Link>
                         <div className="product-overlay">
                           <ul className="mb-0 list-inline">
-                            <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li>
-                            <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
-                            <li className="list-inline-item mr-0"><a className="btn btn-sm btn-outline-dark" href="#productView" data-toggle="modal"><i className="fas fa-expand"></i></a></li>
+                            <li className="list-inline-item mr-0"><button onClick={() => dispatch({type: 'ADD_TO_CART', id: product.id, products})} className="btn btn-sm btn-outline-dark"><i className="fas fa-shopping-cart"><span className="ml-1">Add to Cart</span></i></button></li>
                           </ul>
                         </div>
                       </div>
-                      <h6> <a className="reset-anchor" href="detail.html">Kui Ye Chen’s AirPods</a></h6>
-                      <p className="small text-muted">$250</p>
+                      <h6> <a className="reset-anchor" href="detail.html">{product.pname}</a></h6>
+                      <p className="small text-muted">${product.price}</p>
                     </div>
                   </div>
           </>

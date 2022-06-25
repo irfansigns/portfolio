@@ -7,12 +7,17 @@ export const productContext = createContext();
 
 const ProductContextProvider = props => {
     const [products , setProducts] = useState([]);
+    const [categories , setCategories] = useState([]);
     
     useEffect(() => {
         const fetchUser = () => {
            
             axios.get(AppURL.ProductList).then(response=>{
                 setProducts(response.data);
+            })
+
+            axios.get(AppURL.Shop).then(response=>{
+                setCategories(response.data);
             })
           }
       
@@ -24,7 +29,7 @@ const ProductContextProvider = props => {
    if(products.length)   {
     return(
        
-        <productContext.Provider value={{products}}>
+        <productContext.Provider value={{products,categories}}>
            {props.children}
         </productContext.Provider>
         

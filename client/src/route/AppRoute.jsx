@@ -23,7 +23,7 @@ class AppRoute extends Component {
                 <Route exact path="/" render={(props) => <HomePage1 {...props} key={Date.now()} /> } />            
                 <Route  path="/contact" render={(props) => <ContactPage {...props} key={Date.now()} /> } />
                 <Route  path="/cart" render={(props) => <CartPage {...props} key={Date.now()} /> } />
-                <Route  path="/shop" render={(props) => <Shop {...props} key={Date.now()} /> } />
+                <Route  path="/shop/:code?" render={(props) => <Shop {...props} key={Date.now()} /> } />
                 <Route exact path="/details/:code" render={(props) => <ProductDetails {...props} key={Date.now()} /> } />
                 <Route exact path="/login" render={(props) => <Login {...props} key={Date.now()} /> } />
                 <Route exact path="/register" render={(props) => <Register {...props} key={Date.now()} /> } />

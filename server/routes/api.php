@@ -16,6 +16,7 @@ Route::get('/productdetails/{id}',[ProductController::class, 'ProductDetails']);
 Route::get('/relatedProduct/{id}',[ProductController::class, 'relatedProducts']);
 Route::post('/storeOrder',[ProductController::class, 'storeOrder']);
 Route::get('/shop', [ProductController::class, 'shopMain']);
+Route::get('/shop/{id}', [ProductController::class, 'shopCategory']);
 Route::get('/sliderImages/{id}', [LayoutController::class, 'index']);
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
