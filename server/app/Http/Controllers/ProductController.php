@@ -145,4 +145,10 @@ class ProductController extends Controller
         // return view('shop.shopmain',['products'=>$products,'category'=>$category]);
         return $products;
     }
+
+    public function shopMain(){
+        $category = Category::all();
+        
+        return $category;
+    }
 }

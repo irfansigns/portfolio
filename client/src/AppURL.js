@@ -15,11 +15,15 @@ class AppURL{
         return this.BaseURL+"relatedProduct/"+code;
     }
 
+    static Categories(code){
+        return this.BaseURL+"shop/"+code;
+    }
+
     static storeOrder = this.BaseURL + "storeOrder/";
     static UserLogin = this.BaseURL+"login";
     static UserRegister = this.BaseURL+"register";
     static UserData = this.BaseURL+"user"
-    static Categories = this.BaseURL+"shop"
+    static Shop = this.BaseURL+"shop"
     
 }
 

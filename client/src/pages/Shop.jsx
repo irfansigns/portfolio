@@ -11,7 +11,7 @@ const Shop = () => {
 
     useEffect(() => {
         const fetchCats = () => {
-            axios.get(AppURL.Categories).then(response=>{
+            axios.get(AppURL.Shop).then(response=>{
                 // console.log(response.data);
                 setCat(response.data);
                 console.dir(response.data);
