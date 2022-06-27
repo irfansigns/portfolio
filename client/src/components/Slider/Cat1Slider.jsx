@@ -41,8 +41,8 @@ const Cat1Slider = (props) => {
         infinite: true,
         slidesToShow: 1,
         autoplay: true,
-        speed: 8000,
-        autoplaySpeed: 8000,
+        speed: 4000,
+        autoplaySpeed: 4000,
         slidesToScroll: 1
       };
 
