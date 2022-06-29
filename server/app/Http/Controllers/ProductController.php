@@ -6,6 +6,8 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use Validator;
 use Auth;
 use Mail;
 use App\Mail\ForgetMail;
@@ -85,12 +87,30 @@ class ProductController extends Controller
         // print_r($request->guest);
         // $nuser = $request->guest;
         // print $nuser['gsname'];
+        
         $order = $request->cartData;
-
+        // return $request->guest;
+        
         if($request->guest){
             try{
 
             $nuser = $request->guest;
+
+            
+            $validator = Validator::make($request->guest, [ 
+                'gsmail' => ['required',Rule::unique('users')],
+            ]);
+          
+            if ($validator->fails()) {
+              return response()->json($validator->errors(), 200);
+            }
+          
+            
+            // $validated = $request->validate([
+            //     'guest.gsmail' => ['required','email']
+            // ]);
+          
+
             $user = User::create([
                 'name' => $nuser['gsname'],
                 'email' => $nuser['gsmail'],

@@ -42,6 +42,23 @@ const CartPage = () => {
       }
     }
 
+    // const placeOrder=()=>{
+    //   let data = {
+    //     cartData: shoppingCart,
+    //     guest: loginMod,
+    //   };
+      
+    //   axios.post(AppURL.storeOrder,data).then(response=>{
+    //     console.dir(response.data);
+    //     dispatch({type: 'EMPTY'})
+    //     setRedirect(true);
+    //     // console.dir(shoppingCart);
+    //     }).catch(error=>{
+            
+    //     });
+        
+    // }
+
     const placeOrder=()=>{
       let data = {
         cartData: shoppingCart,
@@ -50,14 +67,11 @@ const CartPage = () => {
       
       axios.post(AppURL.storeOrder,data).then(response=>{
         console.dir(response.data);
-        dispatch({type: 'EMPTY'})
-        setRedirect(true);
-        // console.dir(shoppingCart);
-        }).catch(error=>{
-            
-        });
+        
+        })
         
     }
+
 
     if(redirect){
       return <Redirect to={"/"} />
