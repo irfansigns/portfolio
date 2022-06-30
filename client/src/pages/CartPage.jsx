@@ -9,13 +9,13 @@ import {Button,Modal} from "react-bootstrap";
 
 const CartPage = () => {
     const {dispatch, shoppingCart, totalPrice, qty , user} = useContext(cartContext);
-    // console.dir(shoppingCart);
+    const [error,setError] = useState('');
     const {products} = useContext(productContext);
     const [redirect,setRedirect] = useState(false);
     const [loginMod,setLoginMod] = useState({
       show:false,
       gsname:'',
-      gsmail:'',
+      email:'',
       gsaddress:'',
       gscontact:''
     });
@@ -32,7 +32,7 @@ const CartPage = () => {
     const submitHandler = (e) =>{
       e.preventDefault();
             // alert("Order placed");
-      if(user || loginMod.gsname && loginMod.gsmail && loginMod.gsaddress && loginMod.gscontact){
+      if(user || loginMod.gsname && loginMod.email && loginMod.gsaddress && loginMod.gscontact){
         // alert("USER IS LOGGED IN");
         placeOrder();
       }else{   
@@ -66,10 +66,19 @@ const CartPage = () => {
       };
       
       axios.post(AppURL.storeOrder,data).then(response=>{
-        console.dir(response.data);
-        
-        })
-        
+          
+            // console.dir(response.data);
+            setError(response.data);
+            console.dir(error);
+            // if(error.gsname[0].length){
+            //   console.log(error.gsname[0]);
+            // }
+            // if(error.email){
+            //   console.log(error.email[0]);
+            // }
+            
+          
+      })   
     }
 
 
@@ -132,7 +141,7 @@ const CartPage = () => {
                   </div>
                   <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Email address</label>
-                    <input type="email" value={loginMod.gsmail}  onChange={handleGuest} className="form-control" id="gsmail" aria-describedby="emailHelp" />
+                    <input type="email" value={loginMod.email}  onChange={handleGuest} className="form-control" id="email" aria-describedby="emailHelp" />
                     
                   </div>
                   <div className="form-group">

@@ -87,8 +87,16 @@ class ProductController extends Controller
         // print_r($request->guest);
         // $nuser = $request->guest;
         // print $nuser['gsname'];
-        
         $order = $request->cartData;
+        // return $request;
+        $validator = Validator::make($request->guest, [ 
+            'email' => ['required', 'email', 'max:25',Rule::unique('users')],
+            'gsname' => ['required','min:5']
+        ]);
+      
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 200);
+          }
         // return $request->guest;
         
         if($request->guest){
@@ -96,24 +104,9 @@ class ProductController extends Controller
 
             $nuser = $request->guest;
 
-            
-            $validator = Validator::make($request->guest, [ 
-                'gsmail' => ['required',Rule::unique('users')],
-            ]);
-          
-            if ($validator->fails()) {
-              return response()->json($validator->errors(), 200);
-            }
-          
-            
-            // $validated = $request->validate([
-            //     'guest.gsmail' => ['required','email']
-            // ]);
-          
-
             $user = User::create([
                 'name' => $nuser['gsname'],
-                'email' => $nuser['gsmail'],
+                'email' => $nuser['email'],
                 'contact' => $nuser['gscontact'],
                 'address' => $nuser['gsaddress'],
                 'password' => \bcrypt('password') 
