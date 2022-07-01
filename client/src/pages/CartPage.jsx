@@ -66,18 +66,17 @@ const CartPage = () => {
       };
       
       axios.post(AppURL.storeOrder,data).then(response=>{
-          
             // console.dir(response.data);
-            setError(response.data);
-            console.dir(error);
-            // if(error.gsname[0].length){
-            //   console.log(error.gsname[0]);
-            // }
-            // if(error.email){
-            //   console.log(error.email[0]);
-            // }
+            if(response.data.email){
+              setError(response.data);
+              setLoginMod(loginMod => ({...loginMod,show:true}));
+            }
+            if(response.data=="Record Entered Successfully"){
+              dispatch({type: 'EMPTY'})
+              setRedirect(true);
+            }
+
             
-          
       })   
     }
 
@@ -86,7 +85,7 @@ const CartPage = () => {
       return <Redirect to={"/"} />
     }
 
-    let cartData=<h1>No item is selected</h1>;
+    let cartData=<h3>No item is selected</h3>;
     if(shoppingCart.length>0){
         const s_prod = Object.keys(shoppingCart).map(igKey=>{
             return shoppingCart[igKey];
@@ -142,12 +141,12 @@ const CartPage = () => {
                   <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Email address</label>
                     <input type="email" value={loginMod.email}  onChange={handleGuest} className="form-control" id="email" aria-describedby="emailHelp" />
-                    
+                    {error.email?<small id="emailHelp" className="form-text text-danger">{error.email[0]}</small>:""}
                   </div>
                   <div className="form-group">
                     <label htmlFor="mobilenum">Mobile Number</label>
                     <input type="text" value={loginMod.gscontact} onChange={handleGuest} className="form-control" id="gscontact" />
-                    <small id="emailHelp" className="form-text text-muted">We'll never share your Mobile number with anyone else.</small>
+                    {error.gscontact?<small id="emailHelp" className="form-text text-danger">{error.gscontact[0]}</small>:""}
                   </div>
                   <div className="form-group">
                     <label htmlFor="address">Address</label>

@@ -1,13 +1,14 @@
 import React from 'react'
 import Orders from '../components/Orders'
-import { Link, Redirect } from 'react-router-dom'
+import {  Redirect } from 'react-router-dom'
 
 const Profile = () => {
-    const px5 = {
-        "height" : "5px",
-    }
-
+    
+    let loggedUser = "";
     if (localStorage.getItem("user")) {
+      loggedUser = localStorage.getItem("user");
+      const userData = JSON.parse(loggedUser);
+      console.log(userData);
       return (
         <>
         <section style={{"backgroundColor" : "#eee"}}>
@@ -18,7 +19,7 @@ const Profile = () => {
     <div className="card mb-4">
       <div className="card-body text-center">
         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" className="rounded-circle img-fluid" style={{"width" : "150px"}} />
-        <h5 className="my-3">John Smith</h5>
+        <h5 className="my-3">{loggedUser.name}</h5>
         <p className="text-muted mb-1">Full Stack Developer</p>
         <p className="text-muted mb-4">Bay Area, San Francisco, CA</p>
         <div className="d-flex justify-content-center mb-2">
@@ -62,7 +63,7 @@ const Profile = () => {
             <p className="mb-0">Full Name</p>
           </div>
           <div className="col-sm-9">
-            <p className="text-muted mb-0">Johnatan Smith</p>
+            <p className="text-muted mb-0">{userData.name}</p>
           </div>
         </div>
         <hr />
@@ -71,16 +72,7 @@ const Profile = () => {
             <p className="mb-0">Email</p>
           </div>
           <div className="col-sm-9">
-            <p className="text-muted mb-0">example@example.com</p>
-          </div>
-        </div>
-        <hr />
-        <div className="row">
-          <div className="col-sm-3">
-            <p className="mb-0">Phone</p>
-          </div>
-          <div className="col-sm-9">
-            <p className="text-muted mb-0">(097) 234-5678</p>
+            <p className="text-muted mb-0">{userData.email}</p>
           </div>
         </div>
         <hr />
@@ -89,7 +81,7 @@ const Profile = () => {
             <p className="mb-0">Mobile</p>
           </div>
           <div className="col-sm-9">
-            <p className="text-muted mb-0">(098) 765-4321</p>
+            <p className="text-muted mb-0">{userData.contact}</p>
           </div>
         </div>
         <hr />
@@ -98,7 +90,7 @@ const Profile = () => {
             <p className="mb-0">Address</p>
           </div>
           <div className="col-sm-9">
-            <p className="text-muted mb-0">Bay Area, San Francisco, CA</p>
+            <p className="text-muted mb-0">{userData.address}</p>
           </div>
         </div>
       </div>

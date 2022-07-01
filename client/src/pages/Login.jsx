@@ -15,7 +15,7 @@ const Login = (props) =>{
 
   function handleSubmit(e){
     e.preventDefault();
-    console.log(values);
+    // console.log(values);
 
     const formData = new FormData();
     formData.append('email' , values.email);
@@ -23,7 +23,8 @@ const Login = (props) =>{
     
     axios.post(AppURL.UserLogin,formData).then(response =>{ 
       localStorage.setItem('token',response.data.token);
-      localStorage.setItem('user',response.data.user);
+      localStorage.setItem('user',JSON.stringify(response.data.user));
+      // console.log(localStorage.getItem('user'));
       setValues(values => ({...values,loggedIn:true}));//just to change the state to rerender the component
       dispatch({type: 'Login'})
       // console.dir(response.data.user);

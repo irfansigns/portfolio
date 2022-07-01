@@ -23,16 +23,16 @@ const Navbar =()=>{
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                   <li className="nav-item">
-                    <Link className="nav-link active" to="/">Home</Link>
+                    <Link className="nav-link" activeClassName="active" to="/">Home</Link>
                   </li>
                   <li className="nav-item">
-                  <Link className="nav-link" to="/cart">Cart</Link>
+                  <Link className="nav-link" activeClassName="active" to="/cart">Cart</Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/shop">Shop</Link>
+                    <Link className="nav-link" activeClassName="active" to="/shop">Shop</Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/profile">Profile</Link>
+                    <Link className="nav-link" activeClassName="active" to="/profile">Profile</Link>
                   </li>
                   <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" id="pagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                     <div className="dropdown-menu mt-3" aria-labelledby="pagesDropdown"><Link className="dropdown-item border-0 transition-link" method="post" href="/logout">Logout</Link><a className="dropdown-item border-0 transition-link" href="shop.html">Category</a><a className="dropdown-item border-0 transition-link" href="detail.html">Product detail</a><a className="dropdown-item border-0 transition-link" href="cart.html">Shopping cart</a><a className="dropdown-item border-0 transition-link" href="checkout.html">Checkout</a></div>

@@ -91,7 +91,8 @@ class ProductController extends Controller
         // return $request;
         $validator = Validator::make($request->guest, [ 
             'email' => ['required', 'email', 'max:25',Rule::unique('users')],
-            'gsname' => ['required','min:5']
+            'gsname' => ['required','min:5'],
+            'gscontact' => ['required','min:5']
         ]);
       
         if ($validator->fails()) {
