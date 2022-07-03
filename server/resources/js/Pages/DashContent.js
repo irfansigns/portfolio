@@ -20,7 +20,7 @@ const DashContent = (props) =>{
     const handleSubmit = (e) =>{
       e.preventDefault();
       showItems(true);
-      // alert(value.category);
+      
       // const formData  = new formData();
       // formData.append('category' , values.category);
 
@@ -33,7 +33,7 @@ const DashContent = (props) =>{
         <>
         <div className="container-fluid mt-5">
           <div className="row">
-            <div className="col-md-10 col-11 mx-auto">
+            <div className="col-md-11 col-11 mx-auto">
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                   <li className="breadcrumb-item"><a href="#">Home</a></li>
@@ -41,7 +41,7 @@ const DashContent = (props) =>{
                 </ol>
               </nav>
               <div className="row">
-                <div className="col-lg-3 col-md-4 d-md-block">
+                <div className="col-lg-2 col-md-2 d-md-block">
                   <div className="card bg-common card-left">
                     <nav className="nav flex-column">
                       <a data-toggle="tab" className="nav-link" aria-current="page" href="#profile">
@@ -56,11 +56,15 @@ const DashContent = (props) =>{
                         <i className="fas fa-money-check-alt mr-2"></i>New Product</a>
                       <a data-toggle="tab" className="nav-link" href="#product">
                         <i className="fas fa-tshirt mr-2 active"></i>Products</a>
+                      <a data-toggle="tab" className="nav-link" href="#slider">
+                        <i className="fas fa-camera mr-2 active"></i>Slider Images</a>
+                      <a data-toggle="tab" className="nav-link" href="#siteData">
+                        <i className="fas fa-list-alt mr-2 active"></i>Site Data</a>
                     </nav>
                   </div>
                 </div>
 
-                <div className="col-lg-9 col-md-9">
+                <div className="col-lg-10 col-md-9">
                   <div className="card">
                     <div className="card-header border-bottom mb-3">
                       <ul className="nav nav-tabs card-header-tabs nav-fill">
@@ -80,8 +84,17 @@ const DashContent = (props) =>{
                           <a data-toggle="tab" className="nav-link" aria-current="page" href="#billing">
                           <i className="fas fa-money-check-alt mr-2"></i></a></li>
                         <li className="nav-item">
-                          <a data-toggle="tab" className="nav-link active" aria-current="page" href="#product">
+                          <a data-toggle="tab" className="nav-link " aria-current="page" href="#product">
                           <i className="fas fa-tshirt mr-2"></i></a></li>
+                        <li className="nav-item">
+                          <a data-toggle="tab" className="nav-link " aria-current="page" href="#slider">
+                          <i className="fas fa-camera mr-2"></i></a></li>
+                        <li className="nav-item">
+                          <a data-toggle="tab" className="nav-link " aria-current="page" href="#siteData">
+                          <i className="fas fa-list-alt mr-2"></i></a></li>
+                          
+                          
+                          
                       </ul>
                     </div>
 
@@ -183,6 +196,18 @@ const DashContent = (props) =>{
                                   </div>
                               </section>
                             </div>
+                      </div>
+
+                      <div className="tab-pane " id="slider">
+                        <h6>SELECT IMAGES FOR MAIN SLIDER</h6>
+                        <hr />
+                        
+                      </div>
+
+                      <div className="tab-pane " id="siteData">
+                        <h6>Enter Contact and AboutUs Information</h6>
+                        <hr />
+                        
                       </div>
                     </div>
                   </div>

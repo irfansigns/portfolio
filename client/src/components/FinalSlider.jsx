@@ -12,12 +12,12 @@ const Slider = (props) =>{
         <div className="row m-sm-0">
                 <div className="col-sm-2 p-sm-0 order-2 order-sm-1 mt-2 mt-sm-0">
                   <div className=" d-flex flex-row flex-sm-column" data-slider-id="1">
-                    <div data-target="#carouselExampleCaptions" data-slide-to="0" className="flex-fill mb-2 mr-2 mr-sm-0"><img className="w-100" src={'../img/' + props.images} alt="..." /></div>
+                    <div data-target="#carouselExampleCaptions" data-slide-to="0" className="flex-fill mb-2 mr-2 mr-sm-0"><img className="w-100" src={AppURL.Images+props.images} alt="..." /></div>
 
                     {
                         props.detailImg.map((igKey,i)=>{
                             return(
-                                <div data-target="#carouselExampleCaptions" data-slide-to={i+1} className="flex-fill mb-2 mr-2 mr-sm-0"><img className="w-100" src={AppURL.Images+igKey} alt="..." /></div>
+                                <div data-target="#carouselExampleCaptions" data-slide-to={i+1} className="flex-fill mb-2 mr-2 mr-sm-0"><img className="w-100"  src={AppURL.Images+igKey} alt="..." /></div>
                             )
                     })
 }
@@ -33,7 +33,7 @@ const Slider = (props) =>{
             </ol> */}
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                <img src={'../img/' + props.images} className="d-block w-100" alt="..." />
+                <img src={AppURL.Images+props.images}  className="d-block w-100" alt="..." />
                 
                 </div>    
 

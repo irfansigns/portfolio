@@ -5,7 +5,8 @@ import {Link, Redirect} from "react-router-dom";
 import AppURL from "../AppURL";
 import axios from 'axios';
 import {Button,Modal} from "react-bootstrap";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CartPage = () => {
     const {dispatch, shoppingCart, totalPrice, qty , user} = useContext(cartContext);
@@ -30,6 +31,7 @@ const CartPage = () => {
     }
     
     const submitHandler = (e) =>{
+      
       e.preventDefault();
             // alert("Order placed");
       if(user || loginMod.gsname && loginMod.email && loginMod.gsaddress && loginMod.gscontact){
@@ -74,6 +76,15 @@ const CartPage = () => {
             if(response.data=="Record Entered Successfully"){
               dispatch({type: 'EMPTY'})
               setRedirect(true);
+              toast.success('Order Placed Successfully!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
             }
 
             
@@ -129,7 +140,7 @@ const CartPage = () => {
       {/* Start of Modal  */}
       <Modal show={loginMod.show} >
         <Modal.Header >
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Please fill before placing the order</Modal.Title>
         </Modal.Header>
         {/* <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body> */}
         <div className="modal-body">           
@@ -153,7 +164,7 @@ const CartPage = () => {
                     <input type="text" value={loginMod.gsaddress} onChange={handleGuest} className="form-control" id="gsaddress" />
                   </div>       
 
-                  <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" className="btn btn-secondary" onClick={handleClose} data-dismiss="modal">Close</button>
                   <button type="button" type="submit" className="btn btn-primary ml-1">Place Order
                   
                   </button>
@@ -161,14 +172,7 @@ const CartPage = () => {
                 </form>           
                 
               </div>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
+        
       </Modal>
       {/* End of Modal */}
       {/* <section className="py-5 bg-light "> PAGE START  */}
@@ -248,6 +252,7 @@ const CartPage = () => {
         </div>
       </section>
     </div>
+    <ToastContainer />
         </>
     )
 }

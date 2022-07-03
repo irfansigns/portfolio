@@ -28,7 +28,7 @@ var AdminProducts = function AdminProducts(props) {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
             style: {
-              width: "10%"
+              width: "3%"
             },
             children: "Id"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
@@ -48,7 +48,7 @@ var AdminProducts = function AdminProducts(props) {
             children: "Action"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
             style: {
-              width: "30%"
+              width: "37%"
             },
             children: "Img"
           })]
@@ -65,7 +65,7 @@ var AdminProducts = function AdminProducts(props) {
               children: product.price
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("td", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-                className: "btn-small btn-primary mr-1",
+                className: "btn-small btn-primary mr-1 aButton",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
                   href: product.edit_url,
                   children: "Edit"
@@ -80,7 +80,7 @@ var AdminProducts = function AdminProducts(props) {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
                 className: "w-25",
-                src: base_url + '/img/' + product.ipath,
+                src: base_url + '/storage/img/' + product.ipath,
                 alt: "..."
               })
             })]

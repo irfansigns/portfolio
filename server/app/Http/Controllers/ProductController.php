@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Inertia\Inertia;
 use Validator;
 use Auth;
 use Mail;
@@ -14,6 +15,76 @@ use App\Mail\ForgetMail;
 
 class ProductController extends Controller
 {
+
+    public function index()
+    {
+        // $products = Category::find(1)->products;
+        $products = Product::all();
+        return Inertia::render('Welcome', [
+            'products' => $products->map(function ($product) {
+                return [
+                    'id' => $product->id,
+                    'name' => $product->pname,
+                    'price'=> $product->price,
+                    'quantity'=> $product->qty,
+                    'ipath' => $product->i_path,
+                    'edit_url' => route('product.watch',$product->id),
+                    'detail_url' => route('products.show',$product->id),
+                    'add_cart' => route('product.addCart',$product->id)
+                ];
+            }),
+
+        ]);
+
+        
+
+        //return response()->json(['products' =>$fproducts , 'response' => 200]);
+    }
+
+    public function show($id)
+    {
+        // Storage::disk('local')->put('file.txt', 'Your content here');
+        // This will be stored in storage/app/
+
+        //Reading a txt file
+        // $myfile = fopen( $id.'.txt', "r") or die("Unable to open file!");
+        if($file = fopen(base_path().'/storage/app/'.$id.'.txt','r')){
+            // dd('fileopened');
+           $desc = fread($file,"500");
+           fclose($file);
+
+        }
+        //dd($desc);
+        // echo fread($myfile,filesize("webdictionary.txt"));
+        // fclose($myfile); 
+
+        $product = Product::find($id);
+        // $pimage = DB::table('pimages')->where('product_id', $id)->count();
+        // $pimage = DB::table('pimages')->count();
+        $pimage = Pimage::all()->where('product_id', $id);
+        // if(!$pimage){
+        //     dd('no product found');
+        // }
+        // else{
+        //     dd(count($pimage));        
+        // }
+        return Inertia::render('Detail', [
+                'id' => $product->id,
+                'name' => $product->pname,
+                'price'=> $product->price,
+                'quantity'=> $product->qty,
+                'ipath' => $product->i_path,
+                'add_cart' => route('product.addCart',$product->id),
+                'detimage' => $pimage->map(function ($dimg) {
+                    return [
+                        'name' => $dimg->name,
+                    ];
+                }),
+                'description'=>$desc,
+            ]
+         );
+    }
+
     public function ProductList(Request $request){
         $productlist = Product::where('featured','true')->get();
         

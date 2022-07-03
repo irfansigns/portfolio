@@ -174,7 +174,7 @@ class AdminController extends Controller
             $check=in_array($mextension,$allowedfileExtension);
 
             if($check){
-                $location = storage_path('app\\img\\'.$mfilename);
+                $location = storage_path('app\\public\\img\\'.$mfilename);
                 Image::make($mfile)->save($location);
             }
             $product->i_path = $mfilename;

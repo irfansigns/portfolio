@@ -10082,7 +10082,7 @@ var AdminProducts = function AdminProducts(props) {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
             style: {
-              width: "10%"
+              width: "3%"
             },
             children: "Id"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
@@ -10102,7 +10102,7 @@ var AdminProducts = function AdminProducts(props) {
             children: "Action"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
             style: {
-              width: "30%"
+              width: "37%"
             },
             children: "Img"
           })]
@@ -10119,7 +10119,7 @@ var AdminProducts = function AdminProducts(props) {
               children: product.price
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("td", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-                className: "btn-small btn-primary mr-1",
+                className: "btn-small btn-primary mr-1 aButton",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
                   href: product.edit_url,
                   children: "Edit"
@@ -10134,7 +10134,7 @@ var AdminProducts = function AdminProducts(props) {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
                 className: "w-25",
-                src: base_url + '/img/' + product.ipath,
+                src: base_url + '/storage/img/' + product.ipath,
                 alt: "..."
               })
             })]
@@ -10377,8 +10377,7 @@ var DashContent = function DashContent(props) {
 
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
-    showItems(true); // alert(value.category);
-    // const formData  = new formData();
+    showItems(true); // const formData  = new formData();
     // formData.append('category' , values.category);
     // axios.post('',formData);
   };
@@ -10389,7 +10388,7 @@ var DashContent = function DashContent(props) {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
         className: "row",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
-          className: "col-md-10 col-11 mx-auto",
+          className: "col-md-11 col-11 mx-auto",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("nav", {
             "aria-label": "breadcrumb",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("ol", {
@@ -10409,7 +10408,7 @@ var DashContent = function DashContent(props) {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
             className: "row",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
-              className: "col-lg-3 col-md-4 d-md-block",
+              className: "col-lg-2 col-md-2 d-md-block",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
                 className: "card bg-common card-left",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("nav", {
@@ -10457,11 +10456,25 @@ var DashContent = function DashContent(props) {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("i", {
                       className: "fas fa-tshirt mr-2 active"
                     }), "Products"]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("a", {
+                    "data-toggle": "tab",
+                    className: "nav-link",
+                    href: "#slider",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("i", {
+                      className: "fas fa-camera mr-2 active"
+                    }), "Slider Images"]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("a", {
+                    "data-toggle": "tab",
+                    className: "nav-link",
+                    href: "#siteData",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("i", {
+                      className: "fas fa-list-alt mr-2 active"
+                    }), "Site Data"]
                   })]
                 })
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
-              className: "col-lg-9 col-md-9",
+              className: "col-lg-10 col-md-9",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
                 className: "card",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
@@ -10527,11 +10540,33 @@ var DashContent = function DashContent(props) {
                       className: "nav-item",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("a", {
                         "data-toggle": "tab",
-                        className: "nav-link active",
+                        className: "nav-link ",
                         "aria-current": "page",
                         href: "#product",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("i", {
                           className: "fas fa-tshirt mr-2"
+                        })
+                      })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("li", {
+                      className: "nav-item",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("a", {
+                        "data-toggle": "tab",
+                        className: "nav-link ",
+                        "aria-current": "page",
+                        href: "#slider",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("i", {
+                          className: "fas fa-camera mr-2"
+                        })
+                      })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("li", {
+                      className: "nav-item",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("a", {
+                        "data-toggle": "tab",
+                        className: "nav-link ",
+                        "aria-current": "page",
+                        href: "#siteData",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("i", {
+                          className: "fas fa-list-alt mr-2"
                         })
                       })
                     })]
@@ -10716,6 +10751,18 @@ var DashContent = function DashContent(props) {
                         })
                       })
                     })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+                    className: "tab-pane ",
+                    id: "slider",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h6", {
+                      children: "SELECT IMAGES FOR MAIN SLIDER"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("hr", {})]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+                    className: "tab-pane ",
+                    id: "siteData",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h6", {
+                      children: "Enter Contact and AboutUs Information"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("hr", {})]
                   })]
                 })]
               })

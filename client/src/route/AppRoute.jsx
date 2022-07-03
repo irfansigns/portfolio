@@ -1,17 +1,17 @@
 import React, { Component, Fragment } from 'react'
 import {Route, Switch } from "react-router";
 import ContactPage from '../pages/ContactPage';
-import HomePage from '../pages/HomePage';
 import HomePage1 from '../pages/HomePage1';
 import Navbar from "../components/Navbar";
 import CartPage from '../pages/CartPage';
-import Products from '../components/Products';
 import ProductDetails from '../pages/ProductDetails';
 import Footer from '../components/Footer';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Profile from '../pages/Profile'
 import Shop from '../pages/Shop'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 class AppRoute extends Component {
 
@@ -30,6 +30,7 @@ class AppRoute extends Component {
                 <Route exact path="/profile" render={(props) => <Profile {...props} key={Date.now()} /> } />
             </Switch>
             <Footer />
+            <ToastContainer />
         </Fragment>
         )
     }

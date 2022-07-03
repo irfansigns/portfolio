@@ -18,10 +18,8 @@ use App\Http\Controllers\User\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [ProductController::class, 'index'])->name('basePath');
 
-// Route::get('/', function () {
-//     return Inertia::render('Welcome');
-// });
 Route::get('/product/addCart/{id}', [ProductController::class, 'addToCart'])->name('product.addCart');
 Route::get('/product/watch/{product}', [AdminController::class, 'watch'])->name('product.watch');
 //      Admin Routes
