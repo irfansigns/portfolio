@@ -18,21 +18,7 @@ class AdminController extends Controller
     public function index()
     {
         $products = Product::all();
-        return Inertia::render('AdminDash', [
-            'products' => $products->map(function ($product) {
-                return [
-                    'id' => $product->id,
-                    'name' => $product->pname,
-                    'price'=> $product->price,
-                    'quantity'=> $product->qty,
-                    'ipath' => $product->i_path,
-                    'edit_url' => route('product.watch',$product->id),
-                    'detail_url' => route('product.watch',$product->id),
-                    'add_cart' => route('product.addCart',$product->id)
-                ];
-            }),
-
-        ]);
+        return Inertia::render('AdminDash');
     }
 
     public function login(Request $request){

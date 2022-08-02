@@ -15,18 +15,22 @@ import NewCategory from './NewCategory';
 const DashContent = (props) =>{
    
     const [items , showItems] = useState(false);
+    const [cat , setCat] = useState();
+    
     const page = usePage();
 
     const handleSubmit = (e) =>{
       e.preventDefault();
-      showItems(true);
-      
-      // const formData  = new formData();
-      // formData.append('category' , values.category);
+      if(cat){
+        showItems(true);
+      }else{
+        alert("Choose one category");
+      }
+    }
 
-      // axios.post('',formData);
-  }
-
+    const handleChange = (e) =>{
+      setCat(e.target.value);
+    }
   
 
     return(
@@ -184,10 +188,12 @@ const DashContent = (props) =>{
                                   <div className="card mb-4" id="tables">
                                     <div className="card-header">Categories</div>
                                     <div className="card-body">
-                                      {items?<AdminProducts pro={props.prod} 
+                                      {items?<AdminProducts
+                                      category = {cat}
                                       deleteRoute = {props.delRoute}
-                                     
-                                      />:<AdminForm
+                                      />
+                                      :<AdminForm
+                                      change={handleChange}
                                       submit={handleSubmit}
                                       />}                                    
                                       

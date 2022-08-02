@@ -23,7 +23,6 @@ const AdminDash = (props) =>{
         <div className="page-holder">        
           <Navbar  />
           <DashContent 
-            prod={props.products}
             delRoute={testRoute}
           />
         </div>
