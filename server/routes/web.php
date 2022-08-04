@@ -38,6 +38,7 @@ Route::post('/ncategory', [CategoryController::class,'storeCat'])->name('storeCa
 Route::get('/testEffect',[ProductController::class,'testEffect'])->name('testEffect');
 Route::get('/description{id}',[ProductController::class,'description'])->name('prod.des');
 Route::get('/test{id}',[ProductController::class,'testFunction'])->name('testRoute');
+Route::get('/test{id}',[ProductController::class,'shopCategory'])->name('showCat');
 // Route::get('pay',[PayOrderController::class,'store']);
 
 

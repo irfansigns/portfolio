@@ -17,7 +17,6 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
         return Inertia::render('AdminDash');
     }
 
@@ -189,7 +188,7 @@ class AdminController extends Controller
                 $filename = $file->getClientOriginalName();
                 $allowedfileExtension=['pdf','jpg','png'];
                 $extension = $file->getClientOriginalExtension();
-                $location = storage_path('app\\img\\'.$filename);
+                $location = storage_path('app\\public\\img\\'.$filename);
                 Image::make($file)->save($location);
                 $check=in_array($extension,$allowedfileExtension);
                 if($check){

@@ -31,6 +31,10 @@ const DashContent = (props) =>{
     const handleChange = (e) =>{
       setCat(e.target.value);
     }
+
+    const resetProducts = (e) =>{
+      showItems(false);
+    }
   
 
     return(
@@ -56,9 +60,9 @@ const DashContent = (props) =>{
                         <i className="fas fa-bell mr-2"></i>New Category</a>
                       <a data-toggle="tab" className="nav-link" href="#security">
                         <i className="fas fa-user-shield mr-2"></i>Security</a>
-                      <a data-toggle="tab" className="nav-link" href="#billing">
+                      <a  data-toggle="tab" className="nav-link" href="#billing">
                         <i className="fas fa-money-check-alt mr-2"></i>New Product</a>
-                      <a data-toggle="tab" className="nav-link" href="#product">
+                      <a onClick={resetProducts} data-toggle="tab" className="nav-link" href="#product">
                         <i className="fas fa-tshirt mr-2 active"></i>Products</a>
                       <a data-toggle="tab" className="nav-link" href="#slider">
                         <i className="fas fa-camera mr-2 active"></i>Slider Images</a>
