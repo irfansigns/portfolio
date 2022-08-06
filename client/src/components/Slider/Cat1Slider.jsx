@@ -1,7 +1,8 @@
-import React, {useContext , useEffect , useState} from "react"
+import React, {useEffect , useState} from "react"
 import Slider from "react-slick";
 import AppURL from '../../AppURL';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 const Cat1Slider = (props) => {
 
@@ -9,12 +10,14 @@ const Cat1Slider = (props) => {
         ProductData:[],
     });
 
+    var speed = Number(props.speed);
+    console.log(props.cat);
     useEffect(() => {
         const fetchImages = () => {
             axios.get(AppURL.MegaSlider(props.code)).then(response=>{
-                console.log(props.code);
+                // console.log(props.code);
                 setItemData(values => ({...values,ProductData: response.data}));
-                console.log(response.data);
+                // console.log(response.data);
             }).catch(error=>{
                 
             });
@@ -28,7 +31,7 @@ const Cat1Slider = (props) => {
         return(
             <div>
                 
-                    <img src={AppURL.Images+"slider"+props.code+"/"+slide} className="card-img-top" alt="..." />
+                    <Link to={'/shop/'+props.cat}><img src={AppURL.Images+"slider"+props.code+"/"+slide} className="card-img-top" alt="..." /></Link>
                     
             </div>
         )
@@ -41,8 +44,8 @@ const Cat1Slider = (props) => {
         infinite: true,
         slidesToShow: 1,
         autoplay: true,
-        speed: 4000,
-        autoplaySpeed: 4000,
+        speed: speed,
+        autoplaySpeed: speed,
         slidesToScroll: 1
       };
 

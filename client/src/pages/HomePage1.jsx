@@ -1,10 +1,9 @@
-import React, {useContext , useEffect , useState} from "react"
+import React, {useContext } from "react"
 import { productContext } from "../global/productContext"
 import { cartContext } from "../global/cartContext";
 import AppURL from '../AppURL';
-import axios from 'axios';
 import { Link } from 'react-router-dom'
-import CatSlider from "../components/CatSlider";
+
 import MCatSlider from "../components/Slider/MCatSlider";
 
 
@@ -47,7 +46,7 @@ const HomePage1 = () => {
                     </ul>
                     </div>
                 </div>
-                <h6> <a className="reset-anchor" to="detail.html">{product.pname}</a></h6>
+                <h6> <Link className="reset-anchor" to="detail.html">{product.pname}</Link></h6>
                 <p className="small text-muted">${product.price}</p>
                 {/* <button className="btn btn-small"><a href={product.edit_url}>Edit</a></button> */}
                 </div>

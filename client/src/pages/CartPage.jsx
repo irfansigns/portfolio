@@ -96,7 +96,7 @@ const CartPage = () => {
       return <Redirect to={"/"} />
     }
 
-    let cartData=<h3>No item is selected</h3>;
+    let cartData=<h3>Cart is empty</h3>;
     if(shoppingCart.length>0){
         const s_prod = Object.keys(shoppingCart).map(igKey=>{
             return shoppingCart[igKey];
