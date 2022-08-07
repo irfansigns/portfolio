@@ -9,6 +9,7 @@
 vendor/
 node_modules/
 
+*.env
 *.mp4
 Video/
 
