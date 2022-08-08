@@ -9,6 +9,9 @@
 vendor/
 node_modules/
 
+framework/
+logs/
+
 *.env
 *.mp4
 Video/
